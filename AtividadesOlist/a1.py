@@ -1,0 +1,3 @@
+idade
+nome 
+sexo 
