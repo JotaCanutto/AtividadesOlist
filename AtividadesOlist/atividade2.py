@@ -208,7 +208,13 @@ while True:
         categoria.set_nome(input('Nome:'))
 
         while True:
-            lista_de_subcategorias.append(input('Nome da subcategoria:'))
+            sub = input('Nome da subcategoria:')
+            lista_de_subcategorias.append(sub)
+            categoria_id += 1
+            subcategoria = Categoria(categoria_id)
+            subcategoria.set_nome(sub)
+            lista_de_categorias.append(subcategoria)
+
             op = input('Adicionar mais subcategorias a esta categoria? <S/N>').lower()
 
             if op == 'n':
