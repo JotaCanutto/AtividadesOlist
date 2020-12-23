@@ -1,20 +1,11 @@
-from flask import Flask
+from flask import Flask, render_template
 from calculadora import *
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    titulo = '<h1> Calculadora </h1>'
-    menu = '''
-            <ol> 
-                <li><a href="/soma"> Soma </a></li>
-                <li><a href="/subtracao"> Subtração </a></li>
-                <li><a href="/multiplicacao"> Multiplicação </a></li>
-                <li><a href="/divisao"> Divisão </a></li>
-            </ol>
-            '''
-    return f'{titulo} {menu}'
+    return render_template('index.html')
 
 @app.route('/soma')    
 def somar():
@@ -60,4 +51,4 @@ def dividir():
 
     return f'{titulo} {conteudo} <br/> {voltar}'
 
-app.run()
+app.run(debug = True)
