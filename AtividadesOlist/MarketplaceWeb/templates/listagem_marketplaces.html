@@ -2,6 +2,10 @@
 {% block titulo %} - Listagem Marketplaces {% endblock %}
 {% block corpo %}
 
-    <h3>{{ listagem }}</h3>
+    <ul>
+        {% for i in lista %}
+            <li> {{i}} </li>
+        {% endfor %}
+    </ul>
 
 {% endblock %}

@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from listagem import *
+from historico import *
 
 app = Flask(__name__)
 
@@ -13,15 +14,25 @@ def index():
     lista = [listagem_marketplaces, listagem_categorias, listagem_subcategorias]
     return render_template('index.html', nome=titulo_app, lista=lista)
 
+# @app.route('/listagem_marketplaces')
+# def listagem_marketplaces():
+#     texto = exibir_marketplaces()
+#     return render_template('listagem_marketplaces.html', nome=titulo_app, listagem=texto)
+
 @app.route('/listagem_marketplaces')
 def listagem_marketplaces():
-    texto = exibir_marketplaces()
-    return render_template('listagem_marketplaces.html', nome=titulo_app, listagem=texto)
+    lista = ler_marketplaces()
+    return render_template('listagem_marketplaces.html', nome=titulo_app, lista=lista)
+
+# @app.route('/listagem_categorias')
+# def listagem_categorias():
+#     texto = exibir_categorias()
+#     return render_template('listagem_categorias.html', nome=titulo_app, listagem=texto)
 
 @app.route('/listagem_categorias')
 def listagem_categorias():
-    texto = exibir_categorias()
-    return render_template('listagem_categorias.html', nome=titulo_app, listagem=texto)
+    lista = ler_categorias()
+    return render_template('listagem_categorias.html', nome=titulo_app, lista=lista)
 
 @app.route('/listagem_subcategorias')
 def listagem_subcategorias():
