@@ -1,5 +1,10 @@
 from datetime import datetime
 
+def gravar_marketplaces(marketplace: str):
+    with open('MarketplaceWeb/marketplaces.txt', 'a') as arquivo:
+        arquivo.write(f'{marketplace}\n')
+    gravar_log('Acessado cadastro de Marketplaces')
+
 def ler_marketplaces() -> list:
     lista_marketplaces = []
     with open('MarketplaceWeb/marketplaces.txt', 'r') as arquivo:

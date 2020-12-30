@@ -1,0 +1,10 @@
+{% extends 'template.html' %}
+{% block titulo %} - Cadastro Marketplaces {% endblock %}
+{% block corpo %}
+
+<form action="/cadastrar_marketplace">
+    <label>Nome :</label> <input type='text' name='marketplace'/> <br />
+    <input type='submit' value='Salvar' /> <br />
+</form>
+
+{% endblock %}
